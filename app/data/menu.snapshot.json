@@ -1,0 +1,231 @@
+{
+  "meta": {
+    "updated": null,
+    "partial": true,
+    "note": "PARTIAL SAMPLE: only the dishes quoted in the project brief. Replace this file with the full menu export (189 dishes) before launch, or set VITE_MENU_URL to the live menu JSON."
+  },
+  "categories": [
+    {
+      "id": "soups",
+      "title": "Soups",
+      "sections": [
+        { "title": "Vegetarian", "diet": "veg", "items": [] },
+        { "title": "Non-vegetarian", "diet": "nonveg", "items": [] }
+      ]
+    },
+    {
+      "id": "appetizers",
+      "title": "Appetizers",
+      "sections": [
+        {
+          "title": "Vegetarian",
+          "diet": "veg",
+          "items": [
+            {
+              "id": "appetizers-veg-cutlet",
+              "name": "Veg Cutlet",
+              "note": "SAK Green Bites",
+              "description": "Pan-fried vegetable cutlets crafted from mashed potatoes, garden vegetables, and signature…",
+              "price": 5.99,
+              "variants": [],
+              "diet": "veg"
+            }
+          ]
+        },
+        {
+          "title": "Non-vegetarian",
+          "diet": "nonveg",
+          "items": [
+            {
+              "id": "appetizers-chicken-65",
+              "name": "Chicken 65",
+              "note": "",
+              "description": "Juicy chicken pieces coated in a spiced marinade, fried until crisp, and finished with garlic, curry leaves, and green chilies—creating a perfect balance of crunch, heat, and zesty flavor.",
+              "price": 12.99,
+              "variants": [],
+              "diet": "nonveg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lunch-bowls",
+      "title": "Lunch Bowls",
+      "sections": [{ "title": "Rice bowls", "diet": null, "items": [] }]
+    },
+    {
+      "id": "curries",
+      "title": "Curries",
+      "sections": [
+        { "title": "Vegetarian entrées", "diet": "veg", "items": [] },
+        {
+          "title": "Non-vegetarian entrées",
+          "diet": "nonveg",
+          "items": [
+            {
+              "id": "curries-guntur-gongura-chicken-curry",
+              "name": "Guntur Gongura Chicken Curry",
+              "note": "",
+              "description": "Succulent chicken simmered with vibrant gongura leaves, garlic, and traditional spices—creating a rich, tangy, and deeply aromatic curry with authentic Andhra flavors.",
+              "price": 14.99,
+              "variants": [],
+              "diet": "nonveg"
+            },
+            {
+              "id": "curries-butter-chicken",
+              "name": "Butter Chicken",
+              "note": "",
+              "description": "Juicy chicken cooked in a velvety tomato-butter sauce, enriched with cream, cashews, and…",
+              "price": 13.99,
+              "variants": [],
+              "diet": "nonveg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tandoor",
+      "title": "Tandoor",
+      "sections": [
+        {
+          "title": "Vegetarian",
+          "diet": "veg",
+          "items": [
+            {
+              "id": "tandoor-malai-paneer-tikka",
+              "name": "Malai paneer tikka",
+              "note": "",
+              "description": "Fresh paneer marinated in a luscious mix of cream, yogurt, cheese, and aromatic spices, grilled in tandoor-style—creating a melt-in-the-mouth texture with a mild, smoky richness.",
+              "price": 14.99,
+              "variants": [],
+              "diet": "veg"
+            }
+          ]
+        },
+        { "title": "Non-vegetarian", "diet": "nonveg", "items": [] }
+      ]
+    },
+    {
+      "id": "breads",
+      "title": "Breads",
+      "sections": [
+        {
+          "title": "Breads",
+          "diet": null,
+          "items": [
+            {
+              "id": "breads-onion-kulcha",
+              "name": "Onion kulcha",
+              "note": "",
+              "description": "",
+              "price": null,
+              "variants": [],
+              "diet": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biryani-rice-and-noodles",
+      "title": "Biryani, Rice & Noodles",
+      "sections": [
+        { "title": "Vegetarian", "diet": "veg", "items": [] },
+        {
+          "title": "Chicken, goat & seafood",
+          "diet": "nonveg",
+          "items": [
+            {
+              "id": "biryani-rice-and-noodles-hyderabadi-chicken-dum-biryani",
+              "name": "Hyderabadi Chicken Dum Biryani",
+              "note": "",
+              "description": "Long-grain basmati rice layered with tender, spice-marinated chicken, saffron, and traditional herbs, sealed and slow-cooked to perfection—creating a royal, aromatic biryani with perfectly balanced flavors.",
+              "price": 15.99,
+              "variants": [],
+              "diet": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "desserts",
+      "title": "Desserts",
+      "sections": [
+        {
+          "title": "Desserts",
+          "diet": null,
+          "items": [
+            {
+              "id": "desserts-gulab-jamun",
+              "name": "Gulab Jamun",
+              "note": "",
+              "description": "Delicate, golden-fried dumplings soaked in aromatic sugar syrup infused with cardamom and…",
+              "price": null,
+              "variants": [],
+              "diet": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "smoothies-and-drinks",
+      "title": "Smoothies & Drinks",
+      "sections": [
+        { "title": "Fresh smoothies", "diet": null, "items": [] },
+        {
+          "title": "Beverages",
+          "diet": null,
+          "items": [
+            {
+              "id": "smoothies-and-drinks-irani-chai",
+              "name": "Irani Chai",
+              "note": "",
+              "description": "Slow-brewed tea infused with full-bodied milk and a touch of sweetness…",
+              "price": 2.0,
+              "variants": [],
+              "diet": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ice-cream-rolls",
+      "title": "Ice Cream Rolls",
+      "sections": [{ "title": "Ice cream rolls", "diet": null, "items": [] }]
+    },
+    {
+      "id": "weekend-pulao",
+      "title": "Weekend Pulao",
+      "sections": [
+        { "title": "Vegetarian", "diet": "veg", "items": [] },
+        { "title": "Non-vegetarian", "diet": "nonveg", "items": [] }
+      ]
+    },
+    {
+      "id": "just-south",
+      "title": "Just South",
+      "sections": [
+        {
+          "title": "Tiffins, dosa & uttapam",
+          "diet": null,
+          "items": [
+            {
+              "id": "just-south-masala-dosa",
+              "name": "Masala Dosa",
+              "note": "",
+              "description": "Golden, thin dosa made from fermented rice and lentil batter, stuffed with a savory potato filling infused with turmeric, mustard seeds, and aromatic spices—creating a classic, hearty, and satisfying dish.",
+              "price": 8.99,
+              "variants": [],
+              "diet": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "spicy-avenue-kitchen",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Website for Spicy Avenue Kitchen, Indian restaurant in Katy, Texas. Nuxt + Tailwind CSS + shadcn-vue (Reka UI) + GSAP.",
+  "engines": {
+    "node": "^22.22.0 || >=24.11.0"
+  },
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "node --test",
+    "tags": "node scripts/make-tags.mjs",
+    "tags:all": "node scripts/make-tags.mjs --all",
+    "tags:check": "node scripts/make-tags.mjs --check",
+    "glossary": "node scripts/check-glossary.mjs"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.0",
+    "nuxt": "^4.6.3",
+    "reka-ui": "^2.11.0",
+    "tailwind-merge": "^3.3.1",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
