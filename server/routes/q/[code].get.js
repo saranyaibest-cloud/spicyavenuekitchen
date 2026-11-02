@@ -1,4 +1,4 @@
-import { resolveScan, supabaseRpc } from '../../../shared/qr/resolve.js'
+import { resolveScan, supabaseRpc } from '#shared/qr/resolve.js'
 
 /* Permanent QR entry point: https://<domain>/q/<code>
    Printed QR codes encode this URL, never the menu page directly, so the
