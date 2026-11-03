@@ -5,6 +5,7 @@ import { resolveFeatured } from '~/lib/featuredData'
 import DishCard from '~/components/menu/DishCard.vue'
 import Marquee from '~/components/fx/Marquee.vue'
 import { useGsap } from '~/composables/useGsap'
+import { useCart } from '~/composables/useCart'
 import { gsap, ScrollTrigger, prefersReducedMotion } from '~/lib/gsap'
 
 /* Favourites: a slow marquee of the five names (decorative), then the
@@ -17,6 +18,8 @@ const entries = computed(() => resolveFeatured(props.menu, FEATURED))
 const total = computed(() => entries.value.length)
 const heading = computed(() => (total.value === 5 ? 'Five to start with' : 'Where to begin'))
 const names = computed(() => entries.value.map((e) => e.item.name))
+const cart = useCart()
+const quantity = (id) => cart.items.value.find((line) => line.id === id)?.quantity || 0
 
 const root = ref(null)
 const track = ref(null)
@@ -101,12 +104,15 @@ useGsap(root, ({ reduce }, el) => {
 </script>
 
 <template>
-  <section v-if="total" id="start" ref="root" aria-labelledby="favs-title" class="overflow-hidden bg-chili py-20 text-cream nav:py-28">
-    <Marquee :items="names" class="mb-12 border-y border-cream/20 py-3 font-display text-[1.375rem] text-cream/80 nav:mb-16 nav:text-[1.625rem]" />
+  <section v-if="total" id="start" ref="root" aria-labelledby="favs-title" class="surface-dark relative isolate overflow-hidden bg-slate py-20 text-cream nav:py-28">
+    <Marquee :items="names" class="mb-12 border-y border-cream/20 py-3 font-display text-[1.375rem] text-cream/75 nav:mb-16 nav:text-[1.625rem]" />
 
     <div class="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
       <div class="mb-8 flex flex-wrap items-end justify-between gap-4">
-        <h2 id="favs-title" class="text-section">{{ heading }}</h2>
+        <div>
+          <p class="mb-2 flex items-center gap-3 text-[0.75rem] font-semibold uppercase text-highlight"><span class="h-px w-8 bg-highlight/60" />From our table</p>
+          <h2 id="favs-title" class="text-section">{{ heading }}</h2>
+        </div>
         <div v-if="overflow" class="flex items-center gap-2">
           <p class="mr-2 text-sm tabular-nums" aria-live="polite" aria-atomic="true">{{ current }} of {{ total }}</p>
           <button
@@ -134,7 +140,7 @@ useGsap(root, ({ reduce }, el) => {
           @keydown="onKeydown"
         >
           <li v-for="{ item } in entries" :key="item.id" class="w-[min(82vw,340px)] shrink-0 snap-start nav:w-80">
-            <DishCard :item="item" @open="open" />
+            <DishCard :item="item" layout="featured" :quantity="quantity(item.id)" @open="open" @add="cart.add" @quantity="cart.setQuantity" />
           </li>
         </ul>
         <div v-if="overflow" class="relative mt-4 h-0.5 overflow-hidden rounded-full bg-cream/30" aria-hidden="true">

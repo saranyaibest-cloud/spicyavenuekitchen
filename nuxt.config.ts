@@ -23,8 +23,17 @@ export default defineNuxtConfig({
     // and anon key as the admin dashboard). Unset: every code still redirects to /menu.
     supabaseUrl: '',
     supabaseAnonKey: '',
+    squareAccessToken: '',
+    squareLocationId: process.env.NUXT_SQUARE_LOCATION_ID || process.env.NUXT_PUBLIC_SQUARE_LOCATION_ID || '',
+    squarePickupPrepTime: process.env.NUXT_SQUARE_PICKUP_PREP_TIME || 'PT30M',
+    squareDeliveryBeta: process.env.NUXT_SQUARE_DELIVERY_BETA === 'true',
+    squareDeliveryZips: process.env.NUXT_SQUARE_DELIVERY_ZIPS || '',
+    squareDeliveryFeeCents: process.env.NUXT_SQUARE_DELIVERY_FEE_CENTS || '',
     public: {
       menuUrl: process.env.VITE_MENU_URL || '',
+      squareApplicationId: process.env.NUXT_PUBLIC_SQUARE_APPLICATION_ID || '',
+      squareLocationId: process.env.NUXT_PUBLIC_SQUARE_LOCATION_ID || '',
+      squareEnvironment: process.env.NUXT_PUBLIC_SQUARE_ENVIRONMENT || 'sandbox',
     },
   },
 
@@ -43,9 +52,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', href: '/brand/chili.jpg' },
-        // Remove these two preloads if you switch to Fontshare's hosted CSS (see public/fonts/README.md).
-        { rel: 'preload', href: '/fonts/Satoshi-Variable.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
-        { rel: 'preload', href: '/fonts/Gambetta-Variable.woff2', as: 'font', type: 'font/woff2', crossorigin: '' },
       ],
       // Marks JS as on before first paint, so the hero can hold its pre-animation state
       // (see "Pre-animation state" in app/assets/css/main.css).

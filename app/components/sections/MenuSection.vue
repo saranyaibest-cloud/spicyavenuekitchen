@@ -9,6 +9,7 @@ import DietMark from '~/components/menu/DietMark.vue'
 import DishCard from '~/components/menu/DishCard.vue'
 import CardSkeleton from '~/components/menu/CardSkeleton.vue'
 import DishDialog from '~/components/menu/DishDialog.vue'
+import { useCart } from '~/composables/useCart'
 import { ensureGsap, gsap, prefersReducedMotion, ScrollTrigger } from '~/lib/gsap'
 
 /* The menu: category icon strip (shadcn-vue Tabs on Reka UI: roving focus,
@@ -23,6 +24,8 @@ const props = defineProps({
   titleTag: { type: String, default: 'h2' }, // 'h1' on the /menu page
 })
 const emit = defineEmits(['update:cat', 'update:dishId', 'ask'])
+const cart = useCart()
+const quantity = (id) => cart.items.value.find((line) => line.id === id)?.quantity || 0
 
 const query = ref('')
 const diet = ref('all')
@@ -97,10 +100,13 @@ function ask(item) {
 </script>
 
 <template>
-  <section id="menu" aria-labelledby="menu-title" :aria-busy="status === 'loading'" class="bg-cream py-20 text-ink nav:py-28">
+  <section id="menu" aria-labelledby="menu-title" :aria-busy="status === 'loading'" class="surface-paper py-20 text-ink nav:py-28">
     <div class="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
       <header class="mb-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-        <component :is="titleTag" id="menu-title" class="text-section">Menu</component>
+        <div>
+          <p class="mb-2 flex items-center gap-3 text-[0.75rem] font-semibold uppercase text-chili"><span class="h-px w-8 bg-chili/45" />At the table</p>
+          <component :is="titleTag" id="menu-title" class="text-section">Menu</component>
+        </div>
         <span v-if="stamp" class="text-sm text-muted">{{ stamp }}</span>
       </header>
 
@@ -239,7 +245,7 @@ function ask(item) {
               </h4>
               <ul class="grid auto-rows-fr grid-cols-1 gap-3 nav:grid-cols-2">
                 <li v-for="item in g.items" :key="item.id" class="min-w-0">
-                  <DishCard :item="item" :highlight="searching ? query : ''" @open="emit('update:dishId', $event)" />
+                  <DishCard :item="item" :highlight="searching ? query : ''" layout="menu" :quantity="quantity(item.id)" @open="emit('update:dishId', $event)" @add="cart.add" @quantity="cart.setQuantity" />
                 </li>
               </ul>
             </div>

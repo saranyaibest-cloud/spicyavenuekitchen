@@ -2,6 +2,7 @@
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { SITE } from '~/data/site'
 import BrandMark from '~/components/BrandMark.vue'
+import CartDrawer from '~/components/sections/CartDrawer.vue'
 import { Button } from '~/components/ui/button'
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '~/components/ui/sheet'
 import { gsap, prefersReducedMotion, scrollToTarget } from '~/lib/gsap'
@@ -159,6 +160,7 @@ const UNDERLINE =
       </nav>
 
       <div class="ml-auto flex items-center gap-3 nav:ml-0">
+        <CartDrawer />
         <!-- CALL SLOT (desktop): only when SITE.phone is set -->
         <Button
           v-if="PHONE"

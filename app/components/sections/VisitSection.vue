@@ -29,35 +29,35 @@ useGsap(root, ({ reduce }, el) => {
 </script>
 
 <template>
-  <section id="visit" ref="root" aria-labelledby="visit-title" class="relative isolate overflow-hidden bg-cream py-16 text-ink nav:py-28">
+  <section id="visit" ref="root" aria-labelledby="visit-title" class="surface-dark relative isolate overflow-hidden bg-slate py-16 text-cream nav:py-28">
     <div class="mx-auto grid max-w-[1240px] items-center gap-10 px-4 sm:px-6 lg:px-8 nav:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] nav:gap-20">
       <div>
-        <p data-visit-fade class="mb-3.5 text-sm font-medium text-chili">Katy, Texas</p>
+        <p data-visit-fade class="mb-3.5 flex items-center gap-3 text-sm font-medium text-highlight"><span class="h-px w-8 bg-highlight/60" />Katy, Texas</p>
         <h2 id="visit-title" class="mb-4 text-section">Visit us</h2>
-        <address class="mb-7 font-display text-[clamp(1.6rem,1.2rem+1.4vw,2.2rem)] leading-tight not-italic">
+        <address class="mb-7 font-display text-[1.625rem] leading-tight not-italic nav:text-[2rem]">
           <span data-visit-line class="block overflow-hidden"><span class="block">{{ SITE.street }}</span></span>
           <span data-visit-line class="block overflow-hidden"><span class="block">{{ SITE.city }}</span></span>
         </address>
 
         <div data-visit-fade class="flex flex-wrap gap-3 max-nav:grid">
           <Button :href="SITE.directionsUrl" external arrow="external">Get directions</Button>
-          <Button :href="SITE.mapsUrl" external variant="secondary">Google Maps listing</Button>
+          <Button :href="SITE.mapsUrl" external variant="secondary-dark">Google Maps listing</Button>
           <!-- CALL SLOT: renders only when SITE.phone is set. -->
-          <Button v-if="SITE.phone" :href="`tel:${SITE.phone}`" variant="secondary">Call {{ SITE.phone }}</Button>
+          <Button v-if="SITE.phone" :href="`tel:${SITE.phone}`" variant="secondary-dark">Call {{ SITE.phone }}</Button>
         </div>
 
         <!-- HOURS SLOT: table + badge only when SITE.hours is set; otherwise the Maps line. -->
         <HoursTable v-if="hasHours" :hours="SITE.hours" />
-        <p v-else data-visit-fade class="mt-6 max-w-[40ch] text-[0.9375rem] leading-relaxed text-[#3a3c3b]">
+        <p v-else data-visit-fade class="mt-6 max-w-[40ch] text-[0.9375rem] leading-relaxed text-silver">
           Opening hours and contact details are on the
-          <a :href="SITE.mapsUrl" target="_blank" rel="noopener noreferrer" class="font-bold text-chili underline underline-offset-[3px]">Google Maps listing<span class="sr-only"> (opens in a new tab)</span></a>.
+          <a :href="SITE.mapsUrl" target="_blank" rel="noopener noreferrer" class="font-bold text-highlight underline underline-offset-[3px]">Google Maps listing<span class="sr-only"> (opens in a new tab)</span></a>.
         </p>
       </div>
 
       <div>
         <div
           data-visit-map
-          class="group relative rounded-sm border border-border bg-card p-2.5 shadow-[0_28px_56px_-36px_rgb(23_25_24/0.6)] focus-within:outline-2 focus-within:outline-offset-[3px] focus-within:outline-brass"
+          class="group relative rounded-sm border border-silver/25 bg-slate-2 p-2.5 shadow-[0_28px_56px_-36px_rgb(0_0_0/0.7)] focus-within:outline-2 focus-within:outline-offset-[3px] focus-within:outline-brass"
         >
           <span class="absolute -top-px -left-px z-[2] rounded-tl-sm rounded-br-sm bg-chili px-3 py-1.5 text-[0.8125rem] font-bold text-cream">Katy, TX</span>
           <iframe
@@ -69,9 +69,9 @@ useGsap(root, ({ reduce }, el) => {
             class="block aspect-square w-full rounded-sm border-0 bg-cream-2 grayscale transition-[filter] duration-500 ease-brand group-hover:grayscale-0 group-focus-within:grayscale-0 nav:aspect-[4/3]"
           />
         </div>
-        <p class="mt-3 text-[0.9375rem] text-[#3a3c3b]">
+        <p class="mt-3 text-[0.9375rem] text-silver">
           Map not loading?
-          <a :href="SITE.mapsUrl" target="_blank" rel="noopener noreferrer" class="font-bold text-chili underline underline-offset-[3px]">Open in Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
+          <a :href="SITE.mapsUrl" target="_blank" rel="noopener noreferrer" class="font-bold text-highlight underline underline-offset-[3px]">Open in Google Maps<span class="sr-only"> (opens in a new tab)</span></a>
         </p>
       </div>
     </div>

@@ -36,15 +36,15 @@ const rows = computed(() => hoursRows(props.hours, now.value ? now.value.getDay(
           v-for="(r, i) in rows"
           :key="`${r.label}-${i}`"
           :aria-current="r.isToday ? 'date' : undefined"
-          :class="r.isToday ? 'bg-cream-2 font-bold' : ''"
+          :class="r.isToday ? 'bg-cream/10 font-bold' : ''"
         >
-          <th scope="row" :class="['border-b border-ink/12 px-2.5 py-2 text-left text-[0.9375rem] font-semibold', r.isToday && 'shadow-[inset_3px_0_0_var(--color-chili)]']">
-            {{ r.label }}<span v-if="r.isToday" class="font-bold text-chili"> · Today</span>
+          <th scope="row" :class="['border-b border-cream/15 px-2.5 py-2 text-left text-[0.9375rem] font-semibold', r.isToday && 'shadow-[inset_3px_0_0_var(--color-highlight)]']">
+            {{ r.label }}<span v-if="r.isToday" class="font-bold text-highlight"> · Today</span>
           </th>
-          <td class="border-b border-ink/12 px-2.5 py-2 text-right text-[0.9375rem]">{{ r.text }}</td>
+          <td class="border-b border-cream/15 px-2.5 py-2 text-right text-[0.9375rem]">{{ r.text }}</td>
         </tr>
       </tbody>
     </table>
-    <p class="mt-2 text-[0.8125rem] text-muted">Times are Central Time (Katy, Texas).</p>
+    <p class="mt-2 text-[0.8125rem] text-silver">Times are Central Time (Katy, Texas).</p>
   </div>
 </template>

@@ -106,7 +106,7 @@ const LINK =
     <p
       data-footer-word
       aria-hidden="true"
-      class="pointer-events-none mx-auto mt-14 max-w-[1240px] px-4 font-display text-[clamp(2.25rem,8.2vw,7.25rem)] leading-[0.9] whitespace-nowrap text-cream/10 select-none sm:px-6 lg:px-8"
+      class="pointer-events-none mx-auto mt-14 max-w-[1240px] px-4 font-display text-[1.75rem] leading-[0.9] whitespace-nowrap text-cream/10 select-none sm:px-6 sm:text-[4rem] lg:px-8 nav:text-[7rem]"
     >{{ SITE.name }}</p>
 
     <div class="mx-auto mt-6 max-w-[1240px] border-t border-silver/20 px-4 pt-4.5 pb-[calc(18px+env(safe-area-inset-bottom,0px))] sm:px-6 lg:px-8 max-nav:pr-[calc(1rem+56px)]">
